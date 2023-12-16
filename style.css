@@ -1,0 +1,668 @@
+/*body styles*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: montserrat;
+}
+
+/*header style*/
+nav {
+  background-color: #0082e6;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  margin-top: 0;
+  z-index: 1000;
+}
+
+label.logo{
+    background-image: url("images/logopng.png"); 
+    background-size: 300px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 95px;
+    position: relative;
+    text-indent: -9999999px;
+    top: -15px;
+    width: 300px;
+}
+nav ul{
+    float: right;
+    margin-right: 200px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    text-transform: uppercase;
+}
+nav ul li a{
+  color: #000;
+}
+nav ul ul {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0 10px skyblue;
+  padding: 10px;
+  background-color: pink; /* Background color for dropdown */
+  width: auto; /* Adjust the width as needed */
+  white-space: nowrap; /* Prevent text wrapping */
+  top: 100%; /* Position dropdowns below parent */
+}
+  
+  /* Style the list items within the dropdown */
+  nav ul ul li {
+    display: block;
+    margin: 10px;
+    border-bottom: 1px solid white;
+    text-transform: capitalize;
+    width: auto; /* Adjust width as needed */
+  }
+  /* Show the nested ul when the parent li is hovered */
+  nav ul li:hover > ul {
+    display: block;
+  }
+  nav ul ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: capitalize;
+    display: block;
+    width: auto; /* Adjust width as needed */
+  }
+  a.active, a:hover{
+    background-color: skyblue;
+    transition: .5s ;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+  #check{
+    display: none;
+}
+
+/*cover image*/
+.coverimg{
+    padding-top: 80px;
+    margin-bottom: 0;
+  }
+
+/*about us*/
+  .home {
+      position: relative;
+      overflow: hidden;
+      height: calc(100vh - 80px); /* Subtract the height of the nav from the total viewport height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      height: 40vh;
+  }
+  .home h3{
+    color:blue;
+    font-size: 4.5vw;
+    text-transform: sentencecase;
+  }
+  .parallax-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+  .home-parallax {
+    position: relative;
+    z-index: 1;
+  }
+  .home img{
+    width:100%;
+    margin:1rem 0;
+  }
+  .home img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.executive h1{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+  }
+
+  .executive p{
+    color: blue;
+    text-align: center;
+  }
+
+  .corevalues {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1000px; 
+}
+
+.item {
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease; /* Hover effect transition */
+    flex: 1; /* Equal flex distribution in row */
+}
+
+.item img {
+    border-radius: 50%;
+    height: 100px; 
+    width: 100px; 
+}
+
+.item p {
+    margin-top: 10px;
+}
+.item:hover {
+    transform: translateX(10px);
+}
+
+/*privacy policy*/
+.privacy h1{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-top: 80px;
+  font-weight: bold;
+  font-size: 30px;
+  color: red;
+}
+.privacy p{
+  color: blue;
+  text-align: center;
+}
+.privacy li{
+  text-align: center;
+  color: blue;
+}
+
+  .topbar{
+    display: flex;
+    height: 120px;
+    background: #eee;
+    margin-top: 0;
+  }
+  .topbar i{
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #888;
+    padding: 0.5em 0.6em;
+    margin-left: 5px;
+    margin-top: 5px;
+  } 
+  .topbar h3{
+    font-size: 30px;
+    color: red;
+    margin-bottom: 5px;
+    margin-left: 50px;
+    margin-top: 5px;
+    align-items: center;
+  }
+  .topbar p{
+    font-size: 20px;
+    color:blue;
+    margin-left: 50px;
+    margin-top: 5px;
+  }
+  .branches{
+    width: 250px;
+    height: 100px;
+    margin: 10px 3px 0 100px;
+    background-color: white;
+  }
+  .branches:hover{
+    background-color:black;
+  }
+  
+  .treated{
+    width: 250px;
+    height: 100px;
+    margin:10px 3px 0;
+    background-color: white;
+  }
+  .treated:hover{
+    background-color:whitesmoke;
+  }
+  
+  .happy{
+    width: 250px;
+    height: 100px;
+    margin:10px 3px 10px;
+    background-color: white;
+  }
+  .happy:hover{
+    background-color: green;
+  }
+  
+  .technologies{
+    width: 250px;
+    height: 100px;
+    margin-left:3px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: white;
+  }
+  .technologies:hover{
+    background-color: skyblue;
+  }
+  
+
+  .about h1{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+  }
+  .about p{
+    font-size: 20px;
+    width: 100%;
+    color: purple;
+    text-align: start ;
+  }
+  .heading{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+  }
+
+  .services{
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    display: flex;
+  }
+  .services p{
+    font-size: 15px;
+    color: #000;
+  }
+  
+  .telemedicine {
+    margin-left: 20px;
+    width: 400px;
+    height: 250px;
+    background-color: #888;
+    text-align: center;
+  }
+  .telemedicine i{
+    color: black;
+  }
+  .telemedicine:hover{
+    background: orange;
+  }
+  
+  
+  .healthrecords{
+    margin-left: 20px;
+    width: 400px;
+    height: 250px;
+    background-color: red;
+    text-align: center;
+  }
+  .healthrecords i{
+    color: yellow;
+  }
+  .healthrecords:hover{
+    background: yellowgreen;
+  }
+  
+  .environment{
+    margin-left: 20px;
+    width: 400px;
+    height: 250px;
+    background-color: green;
+    text-align: center;
+  }
+  .environment i{
+    color: white;
+  }
+  .environment:hover{
+    background: purple;
+  }
+  
+  .robotics{
+    margin-left: 20px;
+    width: 400px;
+    height: 250px;
+    background-color: yellow;
+    text-align: center;
+  }
+  .robotics i{
+    color: green;
+  }
+  .robotics:hover{
+    background: goldenrod;
+  }
+  
+  .healthcare{
+    margin-left: 20px;
+    width: 400px;
+    height: 250px;
+    background-color: greenyellow;
+    text-align: center;
+  }
+  .healthcare i{
+    color: red;
+  }
+  .healthcare:hover{
+    background: palevioletred;
+  }
+  
+  .ai{
+    margin-left: 20px;
+    width: 400px;
+    height: 250px;
+    text-align: center;
+    background-color: pink;
+  }
+  .ai i{
+    color: blue;
+  }
+  .ai:hover{
+    background: skyblue;
+  }
+
+  .preview{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+  }
+  
+  .reviews{
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+  }
+  .reviews img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .reviews p{
+    color: gray;
+    font-size: medium;
+    text-align: center;
+  }
+  .reviews h2{
+    font-size: 20px;
+    color: purple;
+  }
+  .content1 {
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+    border-radius: 3%;
+    background-color: antiquewhite;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 1s ease-in-out;
+  }
+  
+  .active {
+    background-color: pink;
+  }
+  
+  .stars {
+    color: #FFD700;
+  }
+
+  /* FOOTER */
+  .summary{
+    background: skyblue;
+    display: flex;
+    width: 100%;
+    height: 250px;
+  }
+  
+  .footerservices{
+    display: grid;
+    gap: 3px;
+    margin-left: 120px;
+  }
+  
+  .footerservices h3{
+    font-size: larger;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: red;
+  }
+  
+  .footerservices a{
+    display: block;
+    font-size: large;
+    color: blue;
+    margin-bottom: 3px;
+  }
+  
+  .footerservices a i{
+    padding-right: .5rem;
+    color:var(--black);
+  }
+  
+  .footerservices a:hover i{
+    padding-right: 2rem;
+  }
+  
+  .developer{
+    width: 100%;
+    height: 20px;
+    background-color: red;
+  }
+  
+  .developer p{
+    color: white;
+    font-size: medium;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 0;
+  }
+  
+  .developer p:hover{
+    background-color: tomato;
+  }
+
+@media (max-width: 768px) {
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 50%;
+        height: 60vh;
+        background-color: skyblue;
+        top: 80px;
+        left: -100%;
+        text-align: left;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+        text-transform: capitalize;
+    }
+    nav ul ul{
+      margin-left: 250px;
+      background-color: transparent;
+      box-shadow: none;
+      top: auto;
+      padding: 0;
+      width: 100%;
+      padding-left: 20px;
+      z-index: 1000;
+    }
+    nav ul ul li a{
+      color: white;
+      border-radius: 0 0 solid white;
+    }
+    /*nav ul ul {
+      display: block;
+      position: static;
+      width: 100%;
+      
+    }
+  
+    /* Override style for list items within dropdown 
+    nav ul ul li {
+      display: block;
+      margin: 5px 0;
+      text-align: center;
+      font-size: 15px;
+      text-transform: capitalize;
+      width: auto;
+    }*/
+    nav ul li:hover > ul {
+      display: block;
+      margin-top: 5px;
+    }
+      a:hover,a.active {
+        background-color: pink;
+        transition: .5s;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    .covering{
+        height: 50px;
+    }
+
+    .services {
+        flex-wrap: wrap; /* Allow flex items to wrap */
+      }
+    
+      /* Set width to 50% to display two blocks per row */
+      .services > div {
+        width: calc(50% - 40px); /* Subtracting margin to fit two blocks */
+        margin: 10px; /* Spacing between blocks */
+        height: auto; /* Allow height to adjust */
+      }
+    
+      /* Retain hover effect */
+      .services > div:hover {
+        opacity: 0.8; /* Adjust opacity on hover */
+      }
+    
+      .content1 {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 250px;
+      }
+      
+      .preview{
+        margin-top: 250px;
+        margin-bottom: 10px;
+      }
+
+      .summary {
+        display: flex;
+        flex-direction: row;
+      }
+      
+      .footerservices {
+        margin-left: 10px;
+        text-align: center;
+      }
+      .footerservices h3{
+        font-size: larger;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        color: red;
+      }
+      
+      .footerservices a{
+        display: block;
+        font-size: 10px;
+        color: blue;
+        margin-bottom: 2px;
+      }
+      .footerservices a i{
+        height: 5px;
+        padding-right: .5rem;
+        color:var(--black);
+      }
+      .footerservices a:hover i{
+        padding-right: 2rem;
+      }
+
+      .topbar{
+        display: flex;
+      }
+      .topbar i{
+        height: 30px;
+        padding: 0.2em 0.2em;
+        margin-left: 2px;
+      } 
+      .topbar h3{
+        font-size: 20px;
+        text-align: center;
+      }
+      .topbar p{
+        font-size: 15px;
+        margin-left: 3px;
+        margin-top: 2px;
+      }
+      .branches{
+        width: 150px;
+        height: auto;
+        margin: 5px 3px 5px 10px;
+        align-items: center;
+      }
+      .treated{
+        width: 150px;
+        height: auto;
+        margin: 5px 3px 5px 3px;
+        align-items: center;
+      }
+      .happy{
+        width: 150px;
+        height: auto;
+        margin: 5px 3px 5px 3px;
+        align-items: center;
+      }
+      
+      .technologies{
+        width: 150px;
+        height: auto;
+        margin: 5px 3px 5px 3px;
+        align-items: center;
+      }
+      
+
+      
+}
+

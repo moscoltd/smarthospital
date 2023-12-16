@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smarthospital/patientsdashboard</title>
+    <link rel="stylesheet" href="hospital.css">
+    <script src="https://kit.fontawesome.com/f7c381e300.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="search.js"></script>
+   
+</head>
+<body>
+  <header>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </label>
+      <label class="logo">Smart Hospital logo</label>
+      <ul>
+        <li class="active"><a href="index2.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="privacy policy.html">privacy policy</a></li> 
+        <li>
+          <a>Portal <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <ul>
+            <li><a href="patients portal.html">Patients portal</a></li>
+            <li><a href="doctors portal.html">Doctors portal</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>      
+  </header>
+  
+    <section class="dashboard"><div class="move">Welcome Scott Lineas.</div></section>
+    
+   <section class="mainsection">
+      <div class="div1">
+        <img src = "images/patient 1.jpg">
+        <p><strong>Name:</strong>Scott Lineas</p><br>
+        <p><strong>Patient No.:</strong>scott123</p><br>
+        <p><strong>Gender:</strong>Male</p><br>
+        <p><strong>Previous infection:</strong>covid19</p><br>
+        <p><strong>ID No.:</strong>22090553</p><br>
+        <p><strong>Emergency Contact: </strong><a href="tel:+254748446726">0748446726</a></p><br>
+        <p><strong>Email: </strong><a href="mailto:feniusscott001@gmail.com">feniusscott001@gmail.com</a></p><br>
+      </div>
+
+      <div class="heart-rate">
+        <div class="pulse"><strong>PULSE RATE</strong></div>
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="200px" y="0px" width="400px" height="100px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+          <polyline fill="none" stroke="red" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"/>
+        </svg>
+        <div class="fade-in"></div>
+        <div class="fade-out"></div>
+        <div class="feedback"></div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        // JavaScript code
+        $(document).ready(function() {
+          var polyline = document.querySelector('.heart-rate polyline');
+          var feedbackDiv = document.querySelector('.feedback');
+          
+          if (polyline) {
+            // Check the number of points in the polyline to assess the heart rate pattern
+            var pointsCount = polyline.points.length;
+            
+            // Check if the points indicate a healthy heart rate pattern (this is a simplified example)
+            if (pointsCount === 14) {
+              feedbackDiv.textContent = "Your pulse rate is within the target heart rate zone for moderate-intensity physical activity. You are doing great! Keep up the good work!";
+            } else {
+              feedbackDiv.textContent = "Your pulse rate is below the target heart rate zone for moderate-intensity physical activity. You may want to increase your exercise intensity or duration to get more benefits from your workout.";
+              // You can further analyze the specific type of irregularity based on the points and provide more specific feedback if needed
+            }
+          } else {
+            feedbackDiv.textContent = "Unable to analyze your heart rate at the moment.";
+          }
+        });
+      </script>
+      <div class="div3">
+        <div class = "titletemp"><strong>BODY TEMPERATURE</strong></div>
+        <div class="thermometer">
+          <div class="temperature" id="temp"></div>
+        </div>
+        <div class="label" id="label"></div>
+      </div>
+    
+      <script>
+        // Mock temperature data (replace this with real API data)
+        const mockData = [
+          { "time": "2023-11-29T23:15:56+03:00", "temp": 36.5 },
+          { "time": "2023-11-29T23:20:56+03:00", "temp": 36.7 },
+          { "time": "2023-11-29T23:16:56+03:00", "temp": 37.7 }
+        ];
+    
+        // A function to convert Celsius to Fahrenheit
+        function cToF(celsius) {
+          return (celsius * 9 / 5) + 32;
+        }
+    
+        // A function to give recommendations based on the temperature
+        function recommend(temp) {
+          if (temp < 35) {
+            return "You have hypothermia. Seek medical attention immediately.";
+          } else if (temp >= 35 && temp < 37.5) {
+            return "You have a normal body temperature. Keep monitoring your health.";
+          } else if (temp >= 37.5 && temp < 40) {
+            return "You have a fever. Drink plenty of fluids and rest. Consult a doctor if symptoms persist.";
+          } else if (temp >= 40) {
+            return "You have a high fever. Seek medical attention urgently.";
+          }
+        }
+    
+        // A function to update the thermometer and the label with the latest temperature data
+        function updateThermometer(data) {
+          // Get the last element of the data array
+          let latest = data[data.length - 1];
+          // Get the temperature and the time
+          let temp = latest.temp;
+          // Get the elements by id
+          let tempDiv = document.getElementById("temp");
+          let labelDiv = document.getElementById("label");
+          // Calculate the height of the temperature div based on the temperature
+          let height = (temp / 50) * 300; // Assuming max temperature is 50
+          // Set the height of the temperature div
+          tempDiv.style.height = height + "px";
+          // Set the text of the label div
+          labelDiv.innerHTML = temp + "°C (" + cToF(temp).toFixed(2) + "°F)<br>" + recommend(temp);
+        }
+    
+        // Instead of API call, use mock data
+        function getTemperature() {
+          // Use mock data instead of API call
+          updateThermometer(mockData);
+        }
+    
+        // Call the getTemperature function every second
+        setInterval(getTemperature, 1000);
+      </script>
+   </section>
+   <div class="hlocation">Hospital location</div>
+
+   <section class="location-message">
+    <div class="location">
+      <!-- Google Maps or Location iframe -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5764030559174!2dYOUR_LONGITUDE!3dYOUR_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMwJzM1LjIiTiA1wrAzMyc1MS4wIkU!5e0!3m2!1sen!2sus!4v1638341604086!5m2!1sen!2sus" width="450" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="message">
+      <h2>Contact the doctor</h2>
+      <div class="name" ><i class="fa-solid fa-id-badge"></i> Dr Admin </div>
+      <div class="telephone"><i class="fa-solid fa-phone" > </i> <a href="tel:+254711115708"> 0711115708</a></div>
+      <div class="email"><i class="fa-solid fa-envelope" > </i> <a href="mailto:admin@gmail.com"> admin@gmail.com</a></div>
+      <div class="whatsapp"><i class="fa-brands fa-whatsapp" > </i> <a href="https://wa.me/0711115708?text=Hello%20there!" target="_blank"> 0711115708</a></div>
+  
+    </div>
+  </section>
+      
+
+  <section class="summary">
+
+    <div class="footerservices">
+        <h3>our services</h3>
+        <a href="#"> <i class="fa fa-medkit" aria-hidden="true"></i> Pharmacy</a>
+        <a href="#"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Book a service </a>
+        <a href="#"> <i class="fa fa-ambulance" aria-hidden="true"></i> Call ambulance </a>
+        <a href="#"> <i class="fa fa-user-md" aria-hidden="true"></i> Consult doctor </a>
+        <a href="#"> <i class="fa fa-h-square" aria-hidden="true"></i> General healthcare </a>
+    </div>
+
+    <div class="footerservices">
+        <h3>quick links</h3>
+        <a href="#about"> <i class="fa fa-arrow-right" aria-hidden="true"></i> about us </a>
+        <a href="#topbar"> <i class="fa fa-arrow-right" aria-hidden="true"></i> achievements </a>
+        <a href="#services"> <i class="fa fa-arrow-right" aria-hidden="true"></i> proficiencies </a>
+        <a href="#reviews"> <i class="fa fa-arrow-right" aria-hidden="true"></i> reviews </a>
+        <a href="privacy policy.html"> <i class="fa fa-arrow-right" aria-hidden="true"></i> privacy policy</a>
+    </div>
+
+    <div class="footerservices">
+        <h3>contact info</h3>
+        <a href="tel:+254711115708"><i class="fa-solid fa-phone" > </i>  +254-711-115-708</a>
+        <a href="tel:+254768819311"><i class="fa-solid fa-phone" > </i>  +254-768-819-311</a>
+        <a href="mailto:feniusscott001@gmail.com"><i class="fa-solid fa-envelope" > </i>  feniusscott001@gmail.com</a>
+        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5764030559174!2dYOUR_LONGITUDE!3dYOUR_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMwJzM1LjIiTiA1wrAzMyc1MS4wIkU!5e0!3m2!1sen!2sus!4v1638341604086!5m2!1sen!2sus"> <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya </a>
+    </div>
+
+    <div class="footerservices">
+        <h3>Follow us</h3>
+        <a href="https://www.facebook.com/feniusscott"> <i class="fa fa-facebook" aria-hidden="true"></i> facebook </a>
+        <a href="https://twitter.com/feniusscott001"> <i class="fa fa-twitter" aria-hidden="true"></i> twitter </a>
+        <a href="https://www.instagram.com/feniusscott/?img_index=1"> <i class="fa fa-instagram" aria-hidden="true"></i> instagram </a>
+        <a href="https://ke.linkedin.com/in/prof-scott-070797216"> <i class="fa fa-linkedin" aria-hidden="true"></i> linkedin </a>
+    </div>
+
+</div>
+</section>
+
+<section class="developer"> 
+<p>created by <a href="https://wa.me/0711115708?text=Hello%20there!" target="_blank"> Fenius Scott </a>| all rights reserved </p>
+</section>
+
+</section>
+
+</body>
+</html>

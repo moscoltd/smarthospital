@@ -1,0 +1,886 @@
+/*body styles*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: montserrat;
+}
+
+/*header style*/
+nav {
+  background-color: #0082e6;
+  height: 80px;
+  width: 100%;
+  margin-top: 0;
+  z-index: 1000;
+}
+
+label.logo{
+    background-image: url("images/logopng.png"); 
+    background-size: 300px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 95px;
+    position: relative;
+    text-indent: -9999999px;
+    top: -15px;
+    width: 300px;
+}
+nav ul{
+    float: right;
+    margin-right: 200px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    text-transform: uppercase;
+}
+nav ul li a{
+  color: #000;
+}
+nav ul ul {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0 10px skyblue;
+  padding: 10px;
+  background-color: pink; /* Background color for dropdown */
+  width: auto; /* Adjust the width as needed */
+  white-space: nowrap; /* Prevent text wrapping */
+  top: 100%; /* Position dropdowns below parent */
+}
+  
+  /* Style the list items within the dropdown */
+  nav ul ul li {
+    display: block;
+    margin: 10px;
+    border-bottom: 1px solid white;
+    text-transform: capitalize;
+    width: auto; /* Adjust width as needed */
+  }
+  /* Show the nested ul when the parent li is hovered */
+  nav ul li:hover > ul {
+    display: block;
+  }
+  nav ul ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: capitalize;
+    display: block;
+    width: auto; /* Adjust width as needed */
+  }
+  a.active, a:hover{
+    background-color: skyblue;
+    transition: .5s ;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+  #check{
+    display: none;
+}
+
+.home {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 80px); /* Subtract the height of the nav from the total viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    height: 40vh;
+}
+.home h3{
+  color:blue;
+  font-size: 4.5vw;
+  text-transform: sentencecase;
+}
+.parallax-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.home-parallax {
+  position: relative;
+  z-index: 1;
+}
+.home img{
+  width:100%;
+  margin:1rem 0;
+}
+.home img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* FEATURES */
+.container{
+    width: 100%;
+    height: 620px;
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(images/login.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  .form-box{
+    width: 300px;
+    max-width: 500px;
+    height: 350px;
+    position: absolute;
+    top: 40%;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    background-position-x: 1500px;
+    background-position-y: 400px;
+    padding: 50px 50px 70px 50px ;
+    text-align: center;
+  }
+  .form-box h1{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #3c00a0;
+    position: relative;
+  }
+  .form-box h1::after {
+    content:'';
+    width: 50px;
+    height: 4px;
+    border-radius: 3px;
+    background: #3c00a0;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .input-field{
+    background: #eaeaea;
+    margin: 10px 0;
+    height: 30px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+  }
+  input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px 15px;
+  }
+  .input-field i{
+    margin-left: 15px;
+    color: blue;
+  }
+  
+  form p{
+    margin-top: 10px;
+    font-size: 15px;
+    color: black;
+    position:left;
+  }
+  form p a{
+    font-size: 13px;
+    color: red;
+  }
+  
+  .btn-field{
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    margin-top: -200px;
+    width: 200px;
+  }
+  .btn-field button{
+    flex-basis: 48%;
+    background: #3c00a0;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+  }
+  .input-group{
+    height:280px;
+  }
+  .btn-field button.disable{
+    background: #eaeaea;
+    color: #555;
+  }
+  
+  .maindiv{
+     display: flex;
+  }
+  .profile {
+    width: 250px;
+    height:600px;
+    background-color: purple;
+    opacity: 70%;
+    position:left;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .profile img{
+    width: 250px;
+    height: 200px;
+  }
+  .profile p{
+    color: black;
+    font-size: 15px;
+    line-height: 1.5px;
+  }
+  
+  .patient1{
+    width: 250px;
+    height: 280px;
+    border: 1px solid black;
+    color: black;
+    margin: 250px 0 100px 20px;
+  }
+  .patient1 img {
+    width: 250px;
+    height: 180px;
+  }
+  .patient1 p{
+    margin-bottom: 10px;
+  }
+  .patient1 button{
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1.5px;
+    cursor: pointer;
+  }
+  
+  .patient2{
+    width: 250px;
+    height: 280px;
+    border: 1px solid black;
+    color: black;
+    margin-top: 250px;
+    margin-left: 20px;
+  }
+  .patient2 img {
+    width: 250px;
+    height: 180px;
+  }
+  .patient2 p{
+    margin-bottom: 10px;
+  }
+  .patient2 button{
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 1.5px;
+    cursor: pointer;
+  }
+  
+  .dashboard {
+    background: skyblue;
+    width: 1000px;
+    height: 50px;
+    color: red;
+    font-size: 20px;
+    margin: 20px 100px 20px 100px;
+    box-shadow: red 0 0 10px;
+    display: flex;
+    text-align: center;  
+  }
+  
+  .move {
+    position: relative;
+    width: 900px; 
+    height: 50px; 
+    background-color: none; 
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes example {
+    0%   {left: 0px; top: 0px;}
+    25%  {left: 200px; top: 0px;}
+    50%  {left: 200px; top: 0px;} /* Adjusted top property */
+    75%  {left: 0px; top: 0px;}
+    100% {left: 0px; top: 0px;}
+  }
+  
+  .pulse{
+      color: red;
+      font-size: 20px;
+      margin-bottom: 50px;
+      text-align: center;  
+    }
+  
+  .mainsection {
+      display: flex;
+  }
+  .div1 {
+    width: 250px;
+    height:600px;
+    background-color: blueviolet;
+    opacity: 70%;
+    position:left;
+    margin-top: 2px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .div1 img{
+    width: 250px;
+    height: 250px;
+  }  
+  .div1 p{
+    color: red;
+    font-size: 15px;
+    line-height: 1.5px;
+  }
+  
+  .heart-rate {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 100px;
+    border: 1px solid black;
+    
+  }
+  .fade-in {
+    position: absolute;
+    width: 80%;
+    height: 30%;
+    background-color: white;
+    top: 20px;
+    right: 0;
+    animation: heartRateIn 5.0s linear infinite;
+  }
+  .fade-out {
+    position: absolute;
+    width: 40%;
+    height: 33%;
+    top: 20px;
+    overflow-x: hidden;
+    animation: heartRateOut 5.0s linear infinite;
+    background: white;
+    background: -moz-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+    background: -o-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+    background: -ms-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+    background: linear-gradient(to right, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 80%, whitesmoke(0, 0, 0, 0) 100%);
+  }
+  @keyframes heartRateIn {
+    0% {
+      width: 100%;
+    }
+    50% {
+      width: 0;
+    }
+    100% {
+      width: 0;
+    }
+  }
+   
+  @keyframes heartRateOut {
+    0% {
+      left: 0;
+    }
+    30% {
+      left: -15%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  .feedback {
+    margin-top: 20px;
+    width: 500px;
+    color: blue;
+  }
+  
+  /* CSS code to style the thermometer and the temperature label */
+  .div3 {
+    width: 400px;
+    height: 500px;
+    background-color: pink;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 20PX;
+  }
+  .titletemp{
+    margin-bottom: 20px;
+    color: red;
+  }
+  .thermometer {
+    width: 20px;
+    height: 300px;
+    background: linear-gradient(to bottom, red 20%, orange 40%, yellow 60%, green 80%, blue 100%);
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+  }
+  .temperature {
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: height 0.5s ease-in-out;
+  }
+  .label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .hospital{
+    background-color: lawngreen;
+    height: 50px;
+    width: 100%;
+    color: black;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .hlocation{
+    color: red;
+    font-size: 30px;
+    align-items: flex-start;
+    margin-left : 100px;
+    margin-bottom: 0;
+  }
+  .location-message {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .location {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .message {
+    display: flex; /* Make the container a flex container */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 20px;
+    background-color: white;
+  }
+  
+  /* Additional styles for the icon */
+  .message div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .message div i {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  
+  
+  .message h2 {
+    margin-bottom: 10px;
+    text-align:start;
+    color: red;
+    font-size: 20px;
+  }
+  .message p{
+    font-size: large;
+  }
+  .name{
+    border: 1px solid black;
+    margin: 10px 20px 10px 20px;
+    width: 300px;
+    align-items: baseline;  
+    height: 50px;
+  }
+  .telephone{
+    border: 1px solid black;
+    margin: 10px 20px 10px 20px;
+    width: 300px;
+    align-items: center;
+    height: 50px;
+  }
+  .email{
+    border: 1px solid black;
+    margin: 10px 20px 10px 20px;
+    width: 300px;
+    align-items: center;
+    height: 50px;
+  }
+  .email i{
+    color: yellow;
+  }
+  .whatsapp{
+    border: 1px solid black;
+    margin: 10px 20px 10px 20px;
+    width: 300px;
+    align-items: center;
+    height: 50px;
+  }
+  .whatsapp i{
+    color: green;
+  }
+
+/* FOOTER */
+.summary{
+    background: skyblue;
+    display: flex;
+    width: 100%;
+    height: 250px;
+  }
+  
+  .footerservices{
+    display: grid;
+    gap: 3px;
+    margin-left: 120px;
+  }
+  
+  .footerservices h3{
+    font-size: larger;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: red;
+  }
+  
+  .footerservices a{
+    display: block;
+    font-size: large;
+    color: blue;
+    margin-bottom: 3px;
+  }
+  
+  .footerservices a i{
+    padding-right: .5rem;
+    color:var(--black);
+  }
+  
+  .footerservices a:hover i{
+    padding-right: 2rem;
+  }
+  
+  .developer{
+    width: 100%;
+    height: 20px;
+    background-color: red;
+  }
+  
+  .developer p{
+    color: white;
+    font-size: medium;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 0;
+  }
+  
+  .developer p:hover{
+    background-color: tomato;
+  }
+
+
+/*for small screen devices*/
+@media (max-width: 768px) {
+    nav{
+        height: 80px;
+        z-index: 1000;
+    }
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 50%;
+        height: 60vh;
+        background-color: skyblue;
+        top: 80px;
+        left: -100%;
+        text-align: left;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+        text-transform: capitalize;
+    }
+    nav ul ul{
+      margin-left: 250px;
+      background-color: transparent;
+      box-shadow: none;
+      top: auto;
+      padding: 0;
+      width: 100%;
+      padding-left: 20px;
+      z-index: 1000;
+    }
+    nav ul ul li a{
+      color: white;
+      border-radius: 0 0 solid white;
+    }
+    
+    nav ul li:hover > ul {
+      display: block;
+      margin-top: 5px;
+    }
+      a:hover,a.active {
+        background-color: pink;
+        transition: .5s;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    /*doctor's dashboard*/
+    .maindiv {
+      display: block; 
+      align-items: center;
+    }
+  
+    .profile,
+    .patient1,
+    .patient2 {
+      width: 100%; /* Set width to 100% for full-width appearance */
+      margin: 20px 0; /* Add some margin for spacing */
+    }
+  
+    .profile {
+      height: auto; /* Adjust height to auto for content-based height */
+      background-color: white;
+      opacity: 0.7; /* Change opacity */
+      padding: 20px; /* Add some padding for better readability */
+    }
+  
+    .profile img,
+    .patient1 img,
+    .patient2 img {
+      width: 50%; /* Make images fill their container */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 10px; /* Add margin bottom for spacing */
+    }
+  
+    .profile p,
+    .patient1 p,
+    .patient2 p {
+      font-size: 14px; /* Decrease font size for better readability */
+      margin-bottom: 8px; /* Adjust spacing between paragraphs */
+    }
+  
+    .patient1,
+    .patient2 {
+      text-align: center;
+      margin-left: 20px; 
+      width: 50%;
+      height: auto;
+    }
+  
+    .patient1 button,
+    .patient2 button {
+      display: block; /* Make buttons full width */
+      width: 50%; /* Set width to 100% */
+      margin: 10px auto; /* Center buttons */
+    }
+
+    /*patients dashboard*/
+    .dashboard {
+      width: 400px; 
+      font-size: 16px; 
+      margin-left: 50px;
+    }
+  
+    .move {
+      animation-name: example; 
+    }
+    @keyframes example {
+        0%   {left: 200px; top: 0px;}
+        25%  {left: 0px; top: 0px;}
+        50%  {left: 0px; top: 0px;} /* Adjusted top property */
+        75%  {left: 0px; top: 0px;}
+        100% {left: 0px; top: 0px;}
+      }
+      
+  
+    .mainsection {
+      flex-direction: column; 
+    }
+  
+    .div1 {
+      width: 100%; /* Adjust width for full responsiveness */
+      height: auto; /* Allow height to adjust based on content */
+      margin-top: 10px;
+      margin-left: 20px; 
+      background-color: #eaeaea;
+      align-items: center;
+    }
+  
+    .div1 img {
+      width: 50%; 
+      height: auto; }
+  
+    .heart-rate {
+      width: 450px; 
+      height: auto;
+      margin: 20px 20px 20px 20px;
+      margin: 10px 0; 
+    }
+    .fade-in {
+        position: absolute;
+        width: 80%;
+        height: 65%;
+        background-color: white;
+        top: 20px;
+        right: 0;
+        animation: heartRateIn 5.0s linear infinite;
+      }
+      .fade-out {
+        position: absolute;
+        width: 40%;
+        height: 65%;
+        top: 20px;
+        overflow-x: hidden;
+        animation: heartRateOut 5.0s linear infinite;
+        background: white;
+        background: -moz-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+        background: -webkit-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+        background: -o-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+        background: -ms-linear-gradient(left, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 50%, whitesmoke(0, 0, 0, 0) 100%);
+        background: linear-gradient(to right, whitesmoke(0, 0, 0, 1) 0%, whitesmoke(0, 0, 0, 1) 80%, whitesmoke(0, 0, 0, 0) 100%);
+      }
+      @keyframes heartRateIn {
+        0% {
+          width: 100%;
+        }
+        50% {
+          width: 0;
+        }
+        100% {
+          width: 0;
+        }
+      }
+       
+      @keyframes heartRateOut {
+        0% {
+          left: 0;
+        }
+        30% {
+          left: -15%;
+        }
+        100% {
+          left: 0;
+        } }
+  
+    /*.fade-in,
+    .fade-out {
+      width: 100%; 
+      position: static; 
+      margin: 5px 0; 
+      animation: none; 
+    }*/
+  
+    .feedback {
+      width: auto; 
+      margin: 10px 0; 
+    }
+  
+    .div3 {
+      width: 450px; 
+      height: auto; 
+      margin: 20px 20px 20px 20px;}  
+  
+    .thermometer {
+      margin: 0 auto; /* Center the thermometer */
+    }
+  
+    .hospital {
+      width: 100%; /* Adjust width for full responsiveness */
+    }
+  
+    .hlocation {
+      margin: 10px; /* Adjust margin for better spacing */
+      font-size: 24px; /* Increase font size for better visibility */
+      text-align: center; /* Center align text */
+    }
+  
+    .location-message {
+      flex-direction: column; /* Change to a column layout on smaller screens */
+    }
+  
+    .location,
+    .message {
+      width: 100%; /* Adjust width for full responsiveness */
+      padding: 10px; /* Adjust padding for better spacing */
+    }
+  
+    .message div {
+      width: 100%; /* Adjust width for full responsiveness */
+      justify-content: flex-start; /* Align items to the start */
+    }
+    
+    /*footer*/
+    .summary {
+        display: flex;
+        flex-direction: row;
+    }
+      
+    .footerservices {
+        margin-left: 10px;
+        text-align: center;
+    }
+    .footerservices h3{
+        font-size: larger;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        color: red;
+      }
+      
+      .footerservices a{
+        display: block;
+        font-size: 10px;
+        color: blue;
+        margin-bottom: 2px;
+      }
+      .footerservices a i{
+        height: 5px;
+        padding-right: .5rem;
+        color:var(--black);
+      }
+      .footerservices a:hover i{
+        padding-right: 2rem;
+      }
+    }
